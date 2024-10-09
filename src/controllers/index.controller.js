@@ -81,6 +81,26 @@ const getRecipeList = async (ingredients, res)=>{
     }
 };
 
+/**
+ * @route   POST /
+ * @desc    Capture the ingredients from the user
+ * @param   {object} ingredients - The concatenated ingredient (e.g. "Apple Milk Orange Banana")
+ * @returns {object} JSON object containing recipe data
+ * @throws  {500} If there is unexpected server error. Other than that, will throw what the API error is
+ */
+const postIngredientList = async (req, res) => {
+    const { ingredients } = req.query;
+    
+    // Check if ingredients is the only query parameter
+    if (Object.keys(req.query).length !== 1 || !ingredients) {
+        return res.status(400).json({ error: 'Only "ingredients" query parameter is allowed' });
+    }
+
+    console.log('Received ingredients:', ingredients);
+    res.json({ message: 'Ingredients received!', ingredients });
+};
+
 module.exports = {
     getRecipeList,
+    postIngredientList,
 };
