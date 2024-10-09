@@ -14,6 +14,6 @@ app.use(require('./routes/index'));
 
 // process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
-app.listen(3000);
+app.listen(port);
 
 console.log(`Server on port ${port}`);
