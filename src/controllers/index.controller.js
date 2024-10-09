@@ -15,7 +15,7 @@ const apiAppKey = 'ae5f39e076976feeede8020af1287163';
  * @returns {object} JSON object containing recipe data
  * @throws  {500} If there is unexpected server error. Other than that, will throw what the API error is
  */
-const getRecipes = async (ingredients, res)=>{
+const getRecipeList = async (ingredients, res)=>{
     const type = 'public'; // This can be public, any, or user. Check API docs for more information.
 
     // Validate required query parameters
@@ -43,7 +43,7 @@ const getRecipes = async (ingredients, res)=>{
             params: {
                 app_id: apiId,
                 app_key: apiAppKey,
-                type: 'public',
+                type: type,
                 q: ingredients 
             }
         });
@@ -52,8 +52,25 @@ const getRecipes = async (ingredients, res)=>{
             const recipes = response.data.hits;
 
             recipes.map((recipe, index) => { 
-                if (recipe.recipe.label != undefined) {
-                    console.log(`${index} Label: `, recipe.recipe.label)
+                if (recipe.recipe != null) {
+                    console.log(`${index}`, recipe.recipe.image);
+                    console.log(`${index} Recipe for: `, recipe.recipe.label);
+                
+                    recipe.recipe.ingredients.forEach((ingredient, index) => {
+                        // console.log(`Ingredient ${index + 1}:`);
+                        console.log(`Text: ${ingredient.text}`);
+                        console.log(`Quantity: ${ingredient.quantity ?? 'N/A'}`);
+                        console.log(`Measure: ${ingredient.measure ?? 'N/A'}`);
+                        console.log(`Food: ${ingredient.food ?? 'N/A'}`);
+                        console.log(`Weight: ${Math.round(ingredient?.weight * 100) / 100 ?? 'N/A'}`);
+                        console.log(`Food Category: ${ingredient.foodCategory ?? 'N/A'}`);
+                        // console.log(`Food ID: ${ingredient.foodId}`);
+                        // console.log(`Image URL: ${ingredient.image}`);
+                        console.log('-----------------------');
+                    });
+                }
+                else {
+                    throw error;
                 }
             });
         }
@@ -65,5 +82,5 @@ const getRecipes = async (ingredients, res)=>{
 };
 
 module.exports = {
-    getRecipes,
+    getRecipeList,
 };
