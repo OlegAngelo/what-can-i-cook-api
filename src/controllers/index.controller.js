@@ -34,13 +34,16 @@ const getRecipeList = async (request, res)=>{
         });
 
         if (response.status == 200) {
-            const recipesData = response.data.hits.map(hit => {
+            const recipesData = response.data.hits.map((hit, index) => {
                 const recipeData = hit.recipe;
+                console.log('BE data: ', recipeData)
 
                 return {
+                    recipe_id: index + 1,
                     name: recipeData.label,
                     image: recipeData.image,
-                    total_time: recipeData.totalTime
+                    total_time: recipeData.totalTime,
+                    meal_type: recipeData.mealType
                 };
             });
 
