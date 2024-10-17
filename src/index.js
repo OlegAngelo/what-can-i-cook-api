@@ -5,9 +5,8 @@ const cors = require("cors");
 
 const fe_localhost = "http://localhost:3000";
 const fe_remote = [
-	"whatcanicookonline.vercel.app",
-	"what-can-i-cook-api-git-development-olegangelos-projects.vercel.app",
-	"what-can-i-cook-nsxsehnfj-olegangelos-projects.vercel.app",
+	"https://whatcanicookonline.vercel.app",
+	"https://what-can-i-cook-e479ev1o6-olegangelos-projects.vercel.app",
 ];
 
 const corsOptions = {
