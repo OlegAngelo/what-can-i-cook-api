@@ -30,3 +30,5 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 app.listen(process.env.PORT || port);
 
 console.log(`Server on port ${port}`);
+
+module.exports = app;
