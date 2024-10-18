@@ -3,19 +3,15 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-const fe_localhost = "http://localhost:3000";
-const fe_remote = [
-	"https://whatcanicookonline.vercel.app",
-	"https://what-can-i-cook-e479ev1o6-olegangelos-projects.vercel.app",
-];
+// const fe_localhost = "http://localhost:3000";
 
-const corsOptions = {
-	origin: fe_remote,
-	credentials: true,
-	optionSuccessStatus: 200,
-};
+// const corsOptions = {
+// 	origin: "*",
+// 	credentials: true,
+// 	optionSuccessStatus: 200,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 //middlewares
 app.use(express.json());
