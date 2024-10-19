@@ -35,8 +35,16 @@ const getRecipeList = async (request, res)=>{
             }
         });
 
-        if (response.status == 200) {
-            const recipesData = response.data.hits.map((hit, index) => {
+        if (response.status === 200) {
+            const hits = response.data.hits || [];
+
+            if (hits.length === 0) {
+                // No data case (status is 200 but no hits)
+                return res.status(200).json({ message: 'No recipes found!' });
+            }
+
+            // Map the data if hits exist
+            const recipesData = hits.map((hit, index) => {
                 const recipeData = hit.recipe;
                 console.log('BE data: ', recipeData)
 
@@ -54,7 +62,7 @@ const getRecipeList = async (request, res)=>{
                 };
             });
 
-            res.json(recipesData);
+            return res.json(recipesData);
         }
     } catch (error) {
         // Handle errors from the external API
