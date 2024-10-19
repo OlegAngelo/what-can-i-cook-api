@@ -3,6 +3,7 @@ const axios = require('axios');
 // Credentials are from https://developer.edamam.com/admin/applications
 const apiBaseUrl = 'https://api.edamam.com';
 const apiPathV2 = '/api/recipes/v2';
+
 const apiUrl = apiBaseUrl + apiPathV2;
 const apiId = '2bb5540e';
 const apiAppKey = 'ae5f39e076976feeede8020af1287163';
@@ -29,7 +30,8 @@ const getRecipeList = async (request, res)=>{
                 app_id: apiId,
                 app_key: apiAppKey,
                 type: type,
-                q: request.query.ingredients
+                q: request.query.ingredients,
+
             }
         });
 
@@ -43,7 +45,12 @@ const getRecipeList = async (request, res)=>{
                     name: recipeData.label,
                     image: recipeData.image,
                     total_time: recipeData.totalTime,
-                    meal_type: recipeData.mealType
+                    meal_type: recipeData.mealType,
+                    ingredient_lines: recipeData.ingredientLines,
+                    url: recipeData.url,
+                    dish_type: recipeData.dishType,
+                    cuisine_type: recipeData.cuisineType,
+                    calowee: Math.round(parseFloat(recipeData.calories))
                 };
             });
 
