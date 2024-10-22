@@ -87,5 +87,3 @@ npm install npm@latest -g
 <a href="https://github.com/olegangelo/what-can-i-cook/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=olegangelo/what-can-i-cook" />
 </a>
-
-Made with [contrib.rocks](https://contrib.rocks).
