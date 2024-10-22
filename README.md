@@ -59,7 +59,7 @@ npm install npm@latest -g
 # Contributing
 
 1. Fork the project
-2. follow steps from "How to run locally"
+2. follow steps from "Installation"
 3. create a new branch from `development` branch with the following template : `<name of developer>-<what-are-you-applying>`
 	- Example branch name: `dylan-converting-cookies-into-localstorage`
 	```bash
@@ -75,7 +75,7 @@ npm install npm@latest -g
 	```bash
 	git commit -m "<short description of changes>"
 	```
-6. then `push` to origin <branch-name>
+6. then `push` to remote <branch-name>
 	```
 	git push origin <current-branch-name>
 	```
