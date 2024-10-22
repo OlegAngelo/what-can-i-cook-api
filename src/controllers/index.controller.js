@@ -58,6 +58,7 @@ const getRecipeList = async (request, res)=>{
                     calorie: Math.round(parseFloat(recipeData.calories))
                 };
             });
+            
             return res.json(recipesData);
         }
     } catch (error) {
