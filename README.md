@@ -1,6 +1,10 @@
-# what-can-i-cook-api
-API for What Can I Cook app - for hacktoberfest
+# what-can-i-cook-api 
+"For HACKTOBERFEST 2024"
 
+
+Link to Front-end repo [What Can I Cook?](https://github.com/OlegAngelo/what-can-i-cook.git).
+
+Link to [live demo](https://whatcanicookonline.vercel.app/)
 ## Technology
 <div align="center">
 	<table>
@@ -14,9 +18,11 @@ API for What Can I Cook app - for hacktoberfest
 	</table>
 </div>
 
-Link for [What Can I Cook?](https://github.com/OlegAngelo/what-can-i-cook.git).
+<div align="center">
+	<img src="https://github.com/user-attachments/assets/845d392b-e24a-40aa-b7ab-2d27adb062ec" height=500 text-align="center"/>
+</div>
 
-![image](https://github.com/user-attachments/assets/845d392b-e24a-40aa-b7ab-2d27adb062ec)
+
 
 
 # Getting Started
