@@ -29,49 +29,50 @@ npm install npm@latest -g
 
 ## Installation
 1. clone repo to your machine
-```bash
-git clone https://github.com/OlegAngelo/what-can-i-cook-api.git
-```
+	```bash
+	git clone https://github.com/OlegAngelo/what-can-i-cook-api.git
+	```
 2. make sure to remove `node_modules` and `package-lock.json`
 3. then run the following command
-```bash
-npm install
-```
+	```bash
+	npm install
+	```
 4. to run, please use the following command
 
-```bash
-node ./src/index.js 
-```
+	```bash
+	node ./src/index.js 
+	```
 5. make sure to have the [frontend](https://github.com/OlegAngelo/what-can-i-cook) running
 6. please make sure there is no existing service being hosted on that port
-> you may change PORT at `src/index.js` on line 1 please update to the PORT you want to serve the backend
-6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+	- you may change PORT at `src/index.js` on line 1 please update to the PORT you want to serve the backend
+6. Open `http://localhost:<PORT>` with your browser to see the result.
+	- please modify `<PORT>` with choosen port hosted for the frontend
+	- Example url: http://localhost:3000
+
 
 # Contributing
 
 1. Fork the project
 2. follow steps from "How to run locally"
 3. create a new branch from `development` branch with the following template : `<name of developer>-<what-are-you-applying>`
-
-example: `dylan-converting-cookies-into-localstorage`
-```bash
-git fetch
-git checkout development
-git pull
-git checkout -b "<please-use-the-template-above>
-```
+	- Example branch name: `dylan-converting-cookies-into-localstorage`
+	```bash
+	git checkout development
+	git pull
+	git checkout -b <please-use-the-template-above>
+	```
 4. upon changes has been applied please `add` changes
-```bash
-git add <file-path>
-```
+	```bash
+	git add <file-path>
+	```
 5. then `commit` your changes locally
-```bash
-git commit -m "<short description of changes>"
-```
+	```bash
+	git commit -m "<short description of changes>"
+	```
 6. then `push` to origin <branch-name>
-```
-git push origin <current-branch-name>
-```
+	```
+	git push origin <current-branch-name>
+	```
 6. create a [pull request](https://github.com/OlegAngelo/what-can-i-cook-api/pulls) here in github
 
 
