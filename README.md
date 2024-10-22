@@ -1,5 +1,5 @@
-# what-can-i-cook-api 
-"For HACKTOBERFEST 2024"
+# What Can I Cook API 
+For HACKTOBERFEST 2024
 
 
 Link to Front-end repo [What Can I Cook?](https://github.com/OlegAngelo/what-can-i-cook.git).
