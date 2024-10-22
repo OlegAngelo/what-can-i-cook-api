@@ -15,6 +15,7 @@ const apiAppKey = 'ae5f39e076976feeede8020af1287163';
  * @returns {object} JSON object containing recipe data
  * @throws  {500} If there is unexpected server error. Other than that, will throw what the API error is
  */
+
 const getRecipeList = async (request, res)=>{
     const type = 'public'; // This can be public, any, or user. Check API docs for more information.
     // Validate required query parameters
@@ -61,6 +62,7 @@ const getRecipeList = async (request, res)=>{
         res.status(error.response ? error.response.status : 500).json({ error: 'Error fetching data from external API.' });
     }
 };
+
 module.exports = {
     getRecipeList,
 };
