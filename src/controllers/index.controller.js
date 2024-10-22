@@ -22,6 +22,7 @@ const getRecipeList = async (request, res)=>{
     if (!type || !apiId || !apiAppKey) {
         return res.status(400).json({ error: 'Missing required query parameters.' });
     }
+
     try {
         const response = await axios.get(apiUrl, {
             params: {
@@ -31,16 +32,19 @@ const getRecipeList = async (request, res)=>{
                 q: request.query.ingredients
             }
         });
+
         if (response.status === 200) {
             const hits = response.data.hits || [];
+
             if (hits.length === 0) {
                 // No data case (status is 200 but no hits)
                 return res.status(200).json({ message: 'No recipes found!' });
             }
+
             // Map the data if hits exist
             const recipesData = hits.map((hit, index) => {
                 const recipeData = hit.recipe;
-                console.log('BE data: ', recipeData)
+
                 return {
                     recipe_id: index + 1,
                     name: recipeData.label,
