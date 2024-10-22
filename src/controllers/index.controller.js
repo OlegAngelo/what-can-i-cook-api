@@ -28,7 +28,7 @@ const getRecipeList = async (request, res)=>{
                 app_id: apiId,
                 app_key: apiAppKey,
                 type: type,
-                q: request.query.ingredients,
+                q: request.query.ingredients
             }
         });
         if (response.status === 200) {
