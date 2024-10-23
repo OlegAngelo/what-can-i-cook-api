@@ -65,7 +65,8 @@ const getRecipeList = async (request, res)=>{
         // Handle errors from the external API
         console.error('Error calling external API:', error);
         res.status(error.response ? error.response.status : 500).json({ error: 'Error fetching data from external API.' });
-    }};
+    }
+};
 
 module.exports = {
     getRecipeList,
